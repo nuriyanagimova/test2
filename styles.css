@@ -13,7 +13,10 @@ body {
 
 .main { 
     background-color: #eff2f9;
+    display: flex;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -29,8 +32,20 @@ body {
 .images-block {
     min-width: 540px;
     border-right: 2px solid rgba(20, 20, 20, 0.15);
-}
+    display: flex;
+    flex-direction: column;
+    
+} 
 
+
+.main-image-wrapper {
+    display: flex; 
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center; 
+}
+    
+ 
 
 .previews-wrapper {
     display: flex;
@@ -43,6 +58,8 @@ body {
     height: 80px;
     display: flex;
     background-color: #fff;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -100,6 +117,11 @@ h1 {
     color: rgba(20, 20, 20, 0.4);
     margin-bottom: 20px;
 }
+
+.colors-list {
+    display: flex;
+    gap: 40px;
+}
     
 ul {
     list-style: none;    
@@ -140,9 +162,25 @@ li {
     padding: 7px;
 }
 
+li.selected {
+    width: 30px;
+    height: 30px;
+    padding: 7px;
+    box-shadow: 2px 2px 6px 0px rgba(81, 91, 117, 0.25);
+    border-radius: 50%;
+}
+
+.wrapper {
+    display: flex;
+} 
+
+.wrapper > div {
+    flex-grow: 1;
+}
+
 #quantity {
     width: 82px;
-    height: 63px;
+    height: 24px;
     font-family: "Rubik", sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -157,13 +195,7 @@ li {
     
 }
 
-li.selected {
-    width: 30px;
-    height: 30px;
-    padding: 7px;
-    box-shadow: 2px 2px 6px 0px rgba(81, 91, 117, 0.25);
-    border-radius: 50%;
-}
+
 
 
 .price {
@@ -184,7 +216,7 @@ li.selected {
     font-size: 18px;
     letter-spacing: 0.01em;
     color:#fff;
-    margin-top: 75px;
+    margin-top: 60px;
 
 }
 
