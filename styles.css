@@ -9,23 +9,25 @@ body {
     font-style: normal;
     line-height: normal;
     font-family: 'Rubik', sans-serif;
+     min-width: 375px;  /* для того, чтобы на разрешениях меньших, чем 375px верстка тоже не ломалась и все красиво масштабировалось, нужно тегу <body>, добавить минимальную ширину, равную ширине самого маленького экрана, под который мы делаем адаптив: */
 }
 
 .main { 
     background-color: #eff2f9;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
 }
 
 .card {
     width: 1170px;
-    height: 800px;
+    min-height: 800px;
     box-shadow: 20px 20px 40px 0 rgba(81, 91, 117, 0.25);/* тень, значения: сдвиг-x | сдвиг-y | размытие | растяжение | цвет */
     background-color: #fff;
     padding: 60px 0 70px;/* внутренние отступы - сверху | по бокам | снизу */
     display: flex;
+    margin: 40px;
 }
 
 
@@ -34,6 +36,7 @@ body {
     border-right: 2px solid rgba(20, 20, 20, 0.15);
     display: flex;
     flex-direction: column;
+
     
 } 
 
@@ -45,7 +48,7 @@ body {
     align-items: center; 
 }
     
- 
+
 
 .previews-wrapper {
     display: flex;
@@ -208,9 +211,9 @@ li.selected {
     color: rgba(20, 20, 20, 0.8);
     text-transform: uppercase;
 }
-   
+
 .button{
-    width: 510px;
+    min-width: 100%;
     height: 70px;
     background-color: #141414;
     font-family: "Rubik", sans-serif;
@@ -221,8 +224,64 @@ li.selected {
     margin-top: 60px;
 
 }
+.button:hover {
+    background-color: #db252e;
+    transform: translateY(5px);
+    
+}
+@media  screen and (max-width: 1200px) { /* как на макете, но смотреть по скукоживанию*/
+    .card {
+        width: 690px;/** как на макете*/
+        flex-direction: column;
+        
+            
+    }
+    .images-block {
+        border-right: none;
+        border-bottom: 2px solid #db252e26;
+        padding-bottom: 70px;
+        
+    }
+
+    .main-image-wrapper  img {
+        padding-bottom: 60px;
+    }
+    
+    .description-block {
+        padding-top: 60px;
+    }
+}
+
+    @media screen and (max-width: 576px) {
+        .card {
+            margin: 15px 15px 40px /* меняем внешние отступы */
+
+        }
+        .images-block {
+            min-width: auto; /* ширину верхнего блока делаем по умолчанию (будет по ширине родителя) */
+
+        }
+        .main-image {
+            width: 250px;/* изменяем ширину главного изображения, высота подстроится автоматически */
+        }
+        h1 { 
+            font-size: 34px;
+        } 
+        .subtitles {
+            font-size: 14px;/* меняем размер шрифта и нижний отступ снаружи для подзаголовка */
+            margin-bottom: 50px;
+        }
+        .text {
+            font-size: 14px;
+            margin: 50px 0 55px;
+        }
+        .button {
+            margin-top: 60px;
+        }
 
 
+        
+    }
 
     
 
